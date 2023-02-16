@@ -4,14 +4,13 @@ const VERSION = '0.1'
 
 
 let flags = parse(Deno.args, {
-    string: [ "text", "lexicon", "mapping" ],
+    string: [ "text", "lexicon" ],
     boolean: ["help", "version"],
     alias: {
       t: "text",
       l: "lexicon",
       v: "version",
-      h: "help",
-      m: "mapping"
+      h: "help"
     }
   })
 
@@ -23,13 +22,6 @@ if(flags.version){
 
 
 
-try {
-  await Deno.stat(flags.mapping);
-  console.log(`${flags.mapping} exists`)
-  let mapping = Deno.readTextFileSync(flags.mapping) 
-} catch (error) {
-  console.log(`Mapping file required with --mapping`)
-}
 
 
 
@@ -37,7 +29,7 @@ let printUsage = () => console.log(
 `Command line utility tool for docling.js 
   Generates some useful files for docling.js.
 INSTALL:
-  deno install --allow-net --allow-read "https://raw.githubusercontent.com/doclingjs/doclingjs-cli/main/docling-cli.js"
+  deno install --allow-net --allow-read "https://raw.githubusercontent.com/doclingjs/docling-cli/main/docling-cli.js"
 USAGE:
   docling-cli [command] [options]
 OPTIONS:
