@@ -20,16 +20,13 @@ if(flags.version){
   Deno.exit()
 }
 
-
-
-
-
-
 let printUsage = () => console.log(
 `Command line utility tool for docling.js 
   Generates some useful files for docling.js.
+
 INSTALL:
   deno install --allow-net --allow-read "https://raw.githubusercontent.com/doclingjs/docling-cli/main/docling-cli.js"
+  
 USAGE:
   docling-cli [command] [options]
 OPTIONS:
@@ -70,8 +67,8 @@ Object.assign(window, {TextView})
 </html>
 `
 
-
 if (flags.text) {
-  console.log(generateTextFor(flags.text))
+  let textHTML = generateTextFor(flags.text)
+  console.log(textHTML)
   Deno.exit()
 }
