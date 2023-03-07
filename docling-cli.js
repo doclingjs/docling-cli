@@ -72,3 +72,34 @@ if (flags.text) {
   console.log(textHTML)
   Deno.exit()
 }
+
+
+
+/* basic lexicon-view */
+let generateLexiconFor = url => `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lexicon view</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://docling.net/book/docling/lexicon/lexicon-view/lexicon-view.css">
+</head>
+<body>
+
+<lexicon-view src="${url}"></lexicon-view>
+
+<script type=module>
+import {LexiconView} from 'https://docling.net/book/docling/lexicon/lexicon-view/LexiconView.js'
+let lexiconView = document.querySelector('lexicon-view')
+
+Object.assign(window, {LexiconView})
+</script>
+</body>
+</html>
+`
+
+if (flags.lexicon) {
+  let lexiconHTML = generateLexiconFor(flags.lexicon)
+  console.log(lexiconHTML)
+  Deno.exit()
+}
