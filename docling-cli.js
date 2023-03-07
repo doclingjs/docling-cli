@@ -52,6 +52,7 @@ let generateTextFor = url => `
   <title>Text view</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://docling.net/book/docling/text/text-view/text-view.css">
+  <meta name="generator" content="docling-cli" />
 </head>
 <body>
 
@@ -83,6 +84,7 @@ let generateLexiconFor = url => `
   <title>Lexicon view</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://docling.net/book/docling/lexicon/lexicon-view/lexicon-view.css">
+  <meta name="generator" content="docling-cli" />
 </head>
 <body>
 
