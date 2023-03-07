@@ -1,6 +1,6 @@
 import { parse } from "https://deno.land/std@0.175.0/flags/mod.ts"
 
-const VERSION = '0.1'
+const VERSION = '0.2'
 
 
 let flags = parse(Deno.args, {
@@ -21,7 +21,9 @@ if(flags.version){
 }
 
 let printUsage = () => console.log(
-`Command line utility tool for docling.js 
+`docling-cli [version ${VERSION}]
+
+Command line utility tool for docling.js 
   Generates some useful files for docling.js.
 
 INSTALL:
@@ -30,6 +32,7 @@ INSTALL:
 USAGE:
   docling-cli [command] [options]
 OPTIONS:
+  -v, --version report version
   -t, --text    <URL> generate a text-view.html for JSON at URL
   -l, --lexicon <URL> generate a lexicon-view.html for JSON at URL
   -h, --help               Prints help information`
